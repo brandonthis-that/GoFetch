@@ -190,7 +190,7 @@ func get_kernel() string { // get kernel version from /proc/version
 	kernel_file, err := os.Open("/proc/version")
 	if err != nil {
 		fmt.Println("Error:", err)
-		os.Exit(0)
+		os.Exit(1)
 	}
 	kernel_info := make([]byte, 1024)
 	kernel_file.Read(kernel_info)
